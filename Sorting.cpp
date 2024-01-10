@@ -73,14 +73,10 @@ template <typename T>
 void merge(T arr[], int start, int mid, int end) {
 	T temp_arr[100]; // temporary array for storing merged sub arrays. size is passed staticly here for compiler compatibility. 
 					// end - start + 1 can also be passed depending on some compilers for better performance
-
-	int temp_pointer = start;
-	for (int i = 0; i < 100; i++) {
-		temp_arr[i] = 0;
-	}
-
+	int temp_pointer = 0;
 	int pointer1 = start;
 	int pointer2 = mid + 1;
+	
 	while (pointer1 <= mid && pointer2 <= end) {
 		if (arr[pointer1] < arr[pointer2]) {
 			temp_arr[temp_pointer++] = arr[pointer1++];
@@ -98,8 +94,9 @@ void merge(T arr[], int start, int mid, int end) {
 		temp_arr[temp_pointer++] = arr[pointer2++];
 	}
 
+	temp_pointer = 0;
 	for (int i = start; i <= end; i++) {
-		arr[i] = temp_arr[i];
+		arr[i] = temp_arr[temp_pointer++];
 	}
 }
 
