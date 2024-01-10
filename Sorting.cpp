@@ -149,7 +149,7 @@ int main() {
 	for (int e : arr)
 		count++;
 
-	cout << "Before Heap Sort: ";
+	cout << "Before Sorting: ";
 	for (auto element : arr) {
 		cout << element << " ";
 	}
@@ -164,7 +164,7 @@ int main() {
 	heapSort(arr, count);
 	auto stop = chrono::high_resolution_clock::now();
 
-	cout << "After Heap Sort: ";
+	cout << "After Sorting: ";
 	for (auto element : arr) {
 		cout << element << " ";
 	}
