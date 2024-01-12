@@ -6,3 +6,5 @@ Sorting Algorithms Written in C++
 3) Quick Sort
 4) Merge Sort
 5) Heap Sort
+
+isHeap function for heap checking.
